@@ -1,0 +1,63 @@
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+[alias]
+    aa = add --all
+    amend = commit --amend -C HEAD
+    ap = add -p
+    b = branch
+    ci = commit
+    co = checkout
+    dc = diff --cached
+    dcs = diff --cached --stat
+    dh1 = diff HEAD~1
+    di = diff
+    div = divergence
+	rl = reflog --date=relative
+    ds = diff --stat=160,120
+    fa = fetch --all
+    ff = merge --ff-only
+    gnc = goodness --cached
+    gn = goodness
+    head = !git l -1
+    h = !git head
+    hp = "!source ~/.githelpers && show_git_head"
+    la = !git l --all
+    l = "! . ~/.githelpers && pretty_git_log"
+    ll = log --stat --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lp = log -p
+    noff = merge --no-ff
+    pom = push origin master
+    pullff = pull --ff-only
+    ra = !git r --all
+    r = !git l -30
+    root = !pwd
+    st = status -sb
+	stt = status -suno # only show tracked files
+    wdiff = diff
+	fixup = commit --amend -C HEAD
+	untracked-files = ls-files -o --exclude-standard
+	ignored-files = ls-files -others -untracked-filed --exclude-standard
+	modified-files = ls-files -m
+[color "diff"]
+    whitespace = red reverse
+[core]
+	excludesfile = ~/.gitignore-global
+	fileMode = false
+	pager = less -r
+	autocrlf = input
+	whitespace = fix,trailing-space,space-before-tab,cr-at-eol
+	quotepath = false
+[merge]
+    tool = vimdiff
+[push]
+	default = tracking
+[include]
+	path = .gitconfig-private
+[apply]
+	whitespace = fix
